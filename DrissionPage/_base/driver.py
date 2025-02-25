@@ -148,6 +148,7 @@ class Driver(object):
             return {'error': 'connection disconnected', 'type': 'connection_error'}
 
         timeout = kwargs.pop('_timeout', _S.cdp_timeout)
+        print("XXX SEND '" + str(_method) + "': " + str(kwargs))
         result = self._send({'method': _method, 'params': kwargs}, timeout=timeout)
         if 'result' not in result and 'error' in result:
             kwargs['_timeout'] = timeout
