@@ -202,6 +202,7 @@ class Clicker(object):
         return True if self._ele.tab.wait.title_change(text=text, exclude=exclude, timeout=timeout) else False
 
     def _click(self, view_x, view_y, button='left', count=1):
+        print("XXX _click: view_x = " + str(view_x) + ", view_y = " + str(view_y))
         self._ele.owner._run_cdp('Input.dispatchMouseEvent', type='mousePressed', x=view_x,
                                  y=view_y, button=button, clickCount=count, _ignore=AlertExistsError)
         self._ele.owner._run_cdp('Input.dispatchMouseEvent', type='mouseReleased', x=view_x,
