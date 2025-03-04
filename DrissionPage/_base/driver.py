@@ -53,6 +53,7 @@ class Driver(object):
         self._cur_id += 1
         ws_id = self._cur_id
         message['id'] = ws_id
+        print("XXX message: " + str(message))
         message_json = dumps(message)
 
         end_time = perf_counter() + timeout if timeout is not None else None
